@@ -24,6 +24,9 @@ class Hangman {
     private int failedAttempts = 0;
 
     public Hangman (final String searchedWord){
+        if (searchedWord == null || searchedWord.isBlank()) {
+            throw new IllegalArgumentException("The searched word must not be null");
+        }
         this.searchedWord = searchedWord.toLowerCase();
         System.out.println("The searched word has " + searchedWord.length() + " characters");
     }
