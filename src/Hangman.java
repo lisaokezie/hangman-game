@@ -1,23 +1,9 @@
-import java.util.*;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 import java.util.regex.Pattern;
 
-class HangmanGame {
-    public static void main(String[] args) {
-        final var search = new Hangman("marathon");
-        search.guessCharacter('a');
-        search.guessCharacter('i');
-        search.guessCharacter('n');
-        search.guessCharacter('r');
-        search.guessCharacter('e');
-        search.guessCharacter('h');
-        search.guessCharacter('c');
-        search.guessCharacter('t');
-        search.guessCharacter('o');
-        search.guessCharacter('m');
-    }
-}
-
-class Hangman {
+public class Hangman {
     private final String searchedWord;
     private final Set<Character> correctChars = new HashSet<>();
     private String currentGuess = "";
@@ -36,11 +22,15 @@ class Hangman {
      * @param character to be checked
      */
     public void guessCharacter(final char character){
-        if (searchedWord.contains(String.valueOf(character).toLowerCase())) {
+        if (isCorrectGuess(character)) {
             handleCorrectCharacterGuess(character);
         } else {
             handleFalseCharacterGuess(character);
         }
+    }
+
+    private boolean isCorrectGuess(final char character) {
+        return searchedWord.contains(String.valueOf(character).toLowerCase());
     }
 
     /**
