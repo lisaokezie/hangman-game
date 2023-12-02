@@ -33,7 +33,7 @@ jobs:
       with:
         arguments: build
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: Build Artifact
         path: build/libs
