@@ -1,7 +1,5 @@
 apply plugin: 'java'
 
-mainClassName = 'hangman.Main'
-
 jar {
     archiveBaseName = 'hm-game'
     archiveVersion =  '0.1.0'
