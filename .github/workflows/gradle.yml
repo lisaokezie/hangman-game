@@ -37,3 +37,10 @@ jobs:
       with:
         name: Build Artifact
         path: build/libs
+    - name: Store test report
+      uses: actions/upload-artifact@v3
+      with:
+        name: reports
+        path: |
+          **/build/reports/
+          **/build/test-results/
