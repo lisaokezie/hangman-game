@@ -30,7 +30,7 @@ public class Hangman {
         }
     }
 
-    private boolean isCorrectGuess(final char character) {
+    boolean isCorrectGuess(final char character) {
         return searchedWord.contains(String.valueOf(character).toLowerCase());
     }
 
