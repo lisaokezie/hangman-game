@@ -1,6 +1,21 @@
-apply plugin: 'java'
+plugins {
+    id 'java'
+}
 
 jar {
     archiveBaseName = 'hm-game'
     archiveVersion =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+}
+
+tasks.named('test') {
+    // Use JUnit Platform for unit tests.
+    useJUnitPlatform()
 }
